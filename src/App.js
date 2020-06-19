@@ -28,8 +28,8 @@ function App() {
     const response = await api.delete(`repositories/${id}`)
     
     if (response.status === 204){
-      const repositoriesRest = repositories.filter(repository => repository.id != id) 
-      setRepositories([...repositoriesRest])
+      const filteredRepositories = repositories.filter(repository => repository.id != id) 
+      setRepositories(filteredRepositories)
     }
   }
 
